@@ -1,0 +1,74 @@
+The game details:
+
+
+Simulator with ticking clock.
+Each clock cycle all the nodes sending data to all the other nodes.
+
+Accroding the sent data each node think what it will do in the next round according the algroithm learned in class.
+
+
+GoodPlayer -> sends the same message to other players.
+ByzantinePlayer -> sends different message to different players.
+
+Implementation:
+Simulator Thread: each T seconds activates an event (same time). <counter+1> % MAX_SIZE
+
+GoodPlayer Thread: handles event as follows , recieving the data of all other players and deciding what to send back
+ according the algorithm. 'reset' or 'count-up'
+
+
+ Zero Version:
+    Hello World
+
+ First Version:
+    will include 4 GoodPlayers, want to see that all are syncronized counting up.
+
+ Second Version:
+    1 byzantinePlayer 3 GoodPlayers.
+
+    Byzantine algorithm : some random shit to try mess the good players, want to see that the good players still
+    advancing as in the algorithm.
+
+    This is DOD. work accomplished can submit!
+
+ Third Version:
+    k byzantinePlayers 3k+1 GoodPlayers.
+
+    same random byzantine algorithm , still want to see that the good players are advancing
+
+
+
+  Fourth Version:
+    advancing the algorithm to each round the user tries to cheat the good players
+
+
+  Optional Features:
+        UX of the players sending data.
+
+
+    fpj(t) = g(fp1(t-1), fp2(t-1) , ... , fpn(t-1))
+
+    synchronized using count down latch.
+    for calculating values of t-1 , the mechanism of sending messagis is by using List of messages for each player.
+
+
+
+
+   Points for thought and implementation:
+    1) Binary Flay in each player
+    2) how the Bad player will player ? according which decision rule? hearustic? option for input from user?
+    3) Simulation with all good players with shlomis algorithm should work?
+    4) design of Byzantine Node
+
+
+
+
+    for example the user choose 1 of some option of games
+
+    a) num of
+    1) all good simulator
+    2) 1 random byzntine
+    3) 1 input byzantine - really adversary
+
+
+    can't still realize way the first step should ne random? and if not none byzantine can't make harm
